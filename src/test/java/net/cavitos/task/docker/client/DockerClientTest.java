@@ -13,8 +13,8 @@ public class DockerClientTest {
     void testClient() {
 
         DockerClientConfig dockerClientConfig = new DefaultDockerClientConfig.Builder()
-            // .withDockerHost("tcp://localhost:2375")
-            .withDockerHost("npipe://./pipe/docker_engine")
+            .withDockerHost("unix:///var/run/docker.sock")
+            // .withDockerHost("npipe://./pipe/docker_engine")
             .build();
 
         dockerClientConfig.getApiVersion();
